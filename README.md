@@ -28,7 +28,7 @@ const firebaseConfig = {
   measurementId: "G-8GSGZQ44ST"
 }
 
-export default apiKey
+export default firebaseConfig
 ```
 
 ### Команды
