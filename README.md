@@ -5,7 +5,7 @@
 
 Этот проект создан с помощью [Create React App](https://github.com/facebook/create-react-app).
 
-### Команды
+## Разработка
 
 Проект использует Google [Firebase](https://firebase.google.com), поэтому, перед выполнением команд, необходимо получить объект `firebaseConfig`, который доступен после [настройки Firebase](https://firebase.google.com/docs/web/setup), и записать его в файл `src/helpers/firebaseConfig.js`:
 
@@ -30,6 +30,12 @@ const firebaseConfig = {
 
 export default apiKey
 ```
+
+### Команды
+
+Перед использованием команд убедитесь:
+1. Убедитесь, что у вас установлен менеджер пакетов [Yarn](https://yarnpkg.com/getting-started/install).
+2. Установите зависимости в корневой директории проекта командой `yarn` или `yarn install`.
 
 #### `yarn start`
 
