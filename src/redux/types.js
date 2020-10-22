@@ -1,0 +1,16 @@
+export const SHOW_MESSAGE				= 'APP/SHOW_MESSAGE'
+export const HIDE_MESSAGE				= 'APP/HIDE_MESSAGE'
+export const SHOW_LOADER				= 'APP/SHOW_LOADER'
+export const HIDE_LOADER				= 'APP/HIDE_LOADER'
+
+export const LOGIN_REQUEST			= 'AUTH/LOGIN_REQUEST'
+export const LOGIN_SUCCESS			= 'AUTH/LOGIN_SUCCESS'
+export const LOGIN_ERROR				= 'AUTH/LOGIN_ERROR'
+export const LOGOUT_REQUEST			= 'AUTH/LOGOUT_REQUEST'
+export const LOGOUT_SUCCESS			= 'AUTH/LOGOUT_SUCCESS'
+export const LOGOUT_ERROR				= 'AUTH/LOGOUT_ERROR'
+
+export const READ_TASK					= 'TASK/READ_TASK'
+export const DATE_CHANGE				= 'TASK/DATE_CHANGE'
+export const READ_REQUEST				= 'TASK/READ_REQUEST'
+export const REQUEST_DONE				= 'TASK/REQUEST_DONE'

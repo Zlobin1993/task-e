@@ -1,0 +1,128 @@
+.form {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 600px;
+	padding: 30px;
+	background-color: $white;
+	@include block-border-radius;
+	box-shadow: $block-shadow;
+	overflow: hidden;
+
+	@include tablet {
+		padding: 15px;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title {
+		margin: 0 0 30px;
+		font-size: 2rem;
+		line-height: 1;
+		font-weight: normal;
+
+		@include tablet {
+			margin-bottom: 15px;
+			font-size: 1.5rem;
+		}
+	}
+
+	&__loader {
+		z-index: 10;
+	}
+
+	&__input {
+		& + & {
+			margin-top: 15px;
+		}
+	}
+
+	&__button-list {
+		display: flex;
+		justify-content: center;
+		align-items: baseline;
+		margin-top: 15px;
+	}
+
+	&__button {
+		& + & {
+			margin-left: 30px;
+
+			@include tablet {
+				margin-left: 15px;
+			}
+		}
+	}
+
+	&__text {
+		font-size: 15px;
+		line-height: 1;
+
+		&::before,
+		&::after {
+			content: "\00A0";
+		}
+	}
+
+	&__error {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1;
+		font-weight: 300;
+		text-align: center;
+		color: $red;
+		opacity: 0;
+		transition: opacity $transition-duration;
+		user-select: none;
+
+		@include tablet {
+			font-size: 0.75rem;
+		}
+
+		&--show {
+			opacity: 1;
+		}
+	}
+
+	&__message-block {
+		z-index: 5;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: $white;
+	}
+
+	&__message {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		font-size: 1rem;
+		color: $black;
+		text-align: center;
+
+		@include tablet {
+			font-size: 0.9rem;
+		}
+	}
+
+	&__email {
+		margin-bottom: 15px;
+		font-size: 1.2rem;
+		color: $main;
+
+		@include tablet {
+			margin: 0;
+			font-size: 1rem;
+		}
+	}
+}

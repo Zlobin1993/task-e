@@ -1,0 +1,30 @@
+.header {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: $white;
+	box-shadow: $block-shadow;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100px;
+		padding: 15px 30px;
+
+		@include mobile {
+			height: 80px;
+			padding: 15px;
+		}
+	}
+
+	&__navigation {
+		margin-left: 30px;
+
+		@include mobile {
+			margin-left: 15px;
+		}
+	}
+}

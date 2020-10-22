@@ -1,0 +1,77 @@
+.button {
+    display: block;
+    font-size: 1rem;
+    line-height: 1;
+    margin: 0;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    box-shadow: none;
+    outline: none;
+	cursor: pointer;
+	
+	@include tablet {
+		font-size: 0.9rem;
+		padding: 9px 14px;
+		border-radius: 3px;
+	}
+
+    &:disabled {
+        cursor: default;
+    }
+
+    &--linked {
+        text-decoration: none;
+    }
+
+    &--primary {
+        color: $white;
+        background-color: $main;
+        transition: background-color $transition-duration;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $main-light;
+        }
+
+        &:disabled {
+            background-color: $gray;
+        }
+    }
+
+    &--secondary {
+        color: $main;
+        border: 1px solid $main;
+        transition: border-color $transition-duration, color $transition-duration;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $main-light;
+            border-color: $main-light;
+        }
+
+        &:disabled {
+            border-color: $gray;
+            color: $gray;
+        }
+    }
+
+    &--light {
+        color: $main;
+        background-color: $white;
+        transition: color $transition-duration;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $main-light;
+        }
+
+        &:disabled {
+            color: $gray;
+        }
+    }
+}

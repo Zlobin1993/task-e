@@ -1,0 +1,14 @@
+.loader {
+	position: relative;
+	height: 30px;
+	width: 30px;
+	border: 5px solid $main;
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: loader-spin 1s linear infinite;
+
+	&--white {
+		border-color: $white;
+		border-top-color: transparent;
+	}
+}

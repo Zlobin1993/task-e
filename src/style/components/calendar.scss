@@ -1,0 +1,162 @@
+.calendar {
+	display: flex;
+	flex-direction: column;
+	background-color: $white;
+	@include block-border-radius;
+	box-shadow: $block-shadow;
+	overflow: hidden;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: $main-dark;
+	}
+
+	&__button {
+		font-size: 1rem;
+		padding: 15px;
+		color: $white;
+		transition: color $transition-duration;
+
+		@include tablet {
+			font-size: 0.9rem;
+		}
+
+		&:not(:disabled):hover {
+			color: $main-light;
+		}
+	}
+
+	&__month {
+		font-size: 1rem;
+		line-height: 1;
+		margin: 0;
+		padding: 0;
+		color: $white;
+
+		@include tablet {
+			font-size: 0.9rem;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__week {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: 1fr;
+		grid-gap: 5px;
+		margin: 0;
+		padding: 5px;
+		list-style: none;
+
+		@include mobile {
+			padding: 4px;
+		}
+	}
+
+	&__week-day {
+		font-size: 1rem;
+		line-height: 1;
+		margin: 0;
+		padding: 0;
+		color: $black;
+		text-align: center;
+		text-transform: capitalize;
+
+		@include tablet {
+			font-size: 0.9rem;
+		}
+
+		&:nth-last-child(1),
+		&:nth-last-child(2) {
+			color: $red;
+		}
+	}
+
+	&__table {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		grid-gap: 5px;
+		margin: 0;
+		padding: 5px;
+		list-style: none;
+
+		@include mobile {
+			padding: 4px;
+		}
+	}
+
+	&__day {
+		height: 50px;
+		width: 50px;
+
+		@include tablet {
+			height: 40px;
+			width: 40px;
+		}
+
+		@include mobile {
+			height: 36px;
+			width: 36px;
+		}
+	}
+
+	&__month-day {
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		font-size: 1rem;
+		line-height: 1;
+		font-weight: 300;
+		color: $black;
+		border: 1px solid $main;
+		border-radius: 3px;
+		transition: border-color $transition-duration;
+		overflow: hidden;
+		cursor: pointer;
+
+		@include tablet {
+			font-size: 0.9rem;
+		}
+
+		&:not(:disabled):hover {
+			border-color: $main-dark;
+		}
+
+		&--passed {
+			border-color: $main-light;
+			background-color: $main-light;
+			color: $white;
+		}
+
+		&--selected {
+			border-color: $main-dark;
+			border-width: 3px;
+		}
+
+		&--current {
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 10%;
+				left: 50%;
+				transform: translateX(-50%);
+				display: block;
+				height: 5px;
+				width: 5px;
+				background-color: $red;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+		}
+	}
+}

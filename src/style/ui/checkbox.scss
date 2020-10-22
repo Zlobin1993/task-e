@@ -1,0 +1,53 @@
+.checkbox {
+	//TODO: need to complete
+
+    &__input {
+        display: none;
+    }
+
+    &__label {
+        position: relative;
+        display: block;
+        height: 28px;
+        width: 28px;
+        border: 2px solid $gray;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: border-color .3s;
+
+        &::before {
+            content: "";
+            z-index: 2;
+            position: absolute;
+            top: -20%;
+            left: 0;
+            display: block;
+            height: 50%;
+            width: 120%;
+            border-bottom: 7px solid $main;
+            border-left: 7px solid $main;
+            transform: rotate(-45deg);
+            opacity: 0;
+            transition: opacity .3s;
+        }
+    }
+
+    &__label:hover,
+    &__input:focus ~ &__label,
+    &__input:active ~ &__label {
+        border-color: $black;
+    }
+
+    &__input:checked ~ &__label {
+        border-color: $main;
+
+        &::before {
+            opacity: 1;
+        }
+
+        &:hover,
+        &:hover::before {
+            border-color: $main-dark;
+        }
+    }
+}

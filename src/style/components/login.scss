@@ -1,0 +1,48 @@
+.login {
+    display: flex;
+	flex-grow: 1;
+	align-items: center;
+
+	@include mobile {
+		flex-direction: column;
+	}
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+		justify-content: center;
+		margin-right: 30px;
+		
+		@include tablet {
+			margin-right: 15px;
+		}
+
+		@include mobile {
+			margin: 0 0 15px;
+		}
+    }
+
+    &__title {
+        margin: 0 0 30px;
+        font-size: 5rem;
+        line-height: 0.95;
+		font-weight: 900;
+
+		@include tablet {
+			margin: 0 0 15px;
+			font-size: 3rem;
+		}
+    }
+
+    &__text {
+        z-index: 2;
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 1.2;
+		font-weight: 300;
+		
+		@include tablet {
+			font-size: 1rem;
+		}
+	}
+}

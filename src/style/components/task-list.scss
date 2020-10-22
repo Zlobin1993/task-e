@@ -1,0 +1,82 @@
+.task-list {
+	display: flex;
+	flex-direction: column;
+
+	&__header {
+		display: grid;
+		grid-template-areas:
+			"calendar title"
+			"calendar result";
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-gap: 30px;
+		padding: 0 75px;
+		margin-bottom: 30px;
+
+		@include tablet {
+			grid-gap: 15px;
+			padding: 0;
+		}
+
+		@include mobile {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 15px;
+		}
+	}
+
+	&__title {
+		grid-area: title;
+		align-self: flex-end;
+		margin: 0;
+		font-size: 5rem;
+		line-height: 0.95;
+		font-weight: 900;
+		text-align: center;
+		color: $white;
+
+		@include tablet {
+			font-size: 3rem;
+		}
+
+		@include mobile {
+			grid-area: auto;
+			order: 1;
+			align-self: stretch;
+		}
+	}
+
+	&__calendar {
+		grid-area: calendar;
+
+		@include mobile {
+			grid-area: auto;
+			order: 2;
+		}
+	}
+
+	&__result {
+		grid-area: result;
+		align-self: flex-start;
+
+		@include mobile {
+			grid-area: auto;
+			order: 3;
+			align-self: stretch;
+			min-height: 3rem;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__task:not(:last-child) {
+		margin-bottom: 15px;
+	}
+}

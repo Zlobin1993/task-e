@@ -1,0 +1,96 @@
+.message {
+    z-index: 110;
+    position: fixed;
+    top: 100px;
+    right: 0;
+    max-width: 30%;
+
+    &__list {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+		position: relative;
+		display: flex;
+		margin: 15px 15px 0 0;
+		padding: 15px 15px 15px 45px;
+		@include block-border-radius;
+		color: $gray-dark;
+		background-color: $white;
+		box-shadow: $block-shadow;
+		transition: color $transition-duration;
+		overflow: hidden;
+		cursor: pointer;
+
+		@include mobile {
+			display: none;
+		}
+
+		&:hover {
+			color: $gray;
+		}
+		
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 30px;
+			transition: background-color $transition-duration;
+		}
+
+		&::before {
+			z-index: 5;
+			background-color: $gray-dark;
+			transform: translateY(100%);
+			animation: message-timer 5s linear;
+		}
+
+		&::after {
+			background-color: $gray-light;
+		}
+
+		&--success {
+			color: $main-dark;
+
+			&:hover {
+				color: $main;
+			}
+
+			&::before {
+				background-color: $main-dark;
+			}
+
+			&::after {
+				background-color: $main-light;
+			}
+		}
+
+		&--error {
+			color: $red-dark;
+
+			@include mobile {
+				display: flex;
+			}
+
+			&:hover {
+				color: $red;
+			}
+
+			&::before {
+				background-color: $red-dark;
+			}
+
+			&::after {
+				background-color: $red-light;
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+// Colors:
+$black: #000;
+$white: #fff;
+
+$main: #32CCBC;
+$main-light: #86dfd6;
+$main-dark: #1e9c90;
+
+$gray: #777;
+$gray-light: #ccc;
+$gray-dark: #555;
+
+$red: #ff0015;
+$red-light: #ff3e48;
+$red-dark: #ad0020;
+
+$main-gradient: linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%);
+
+$block-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.07);
+
+// Resolutions:
+$max-resolution: 1900px;
+$desktop-resolution: 1480px;
+$tablet-resolution: 1024px;
+$mobile-resolution: 768px;
+$min-resolution: 320px;
+
+// Transitions:
+$transition-duration: .3s;

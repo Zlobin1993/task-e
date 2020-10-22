@@ -1,0 +1,67 @@
+.input {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        margin: 0 0 3px;
+        font-size: 1;
+        line-height: 1;
+		font-weight: 300;
+		
+		@include tablet {
+			font-size: 0.9rem;
+		}
+    }
+
+    &__field {
+        margin: 0;
+        padding: 7px;
+        border: 1px solid $main;
+        border-radius: 0;
+        background: none;
+        font-size: 1rem;
+        line-height: 1;
+        font-weight: 300;
+        transition: border-color $transition-duration, color $transition-duration;
+		outline: none;
+
+		@include tablet {
+			font-size: 0.9rem;
+		}
+
+        &:active,
+        &:focus {
+            border-color: $main-light;
+        }
+
+        &:disabled {
+            border-color: $gray;
+            color: $gray;
+        }
+    }
+
+    &__error {
+        display: block;
+        height: 1rem;
+        margin: 3px 0 0;
+        font-size: 1rem;
+        line-height: 1;
+        font-weight: 300;
+        color: $red;
+        opacity: 0;
+        transition: opacity $transition-duration;
+        user-select: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+		overflow: hidden;
+		
+		@include tablet {
+			font-size: 0.75rem;
+			height: 0.75rem;
+		}
+
+        &--show {
+            opacity: 1;
+        }
+    }
+}

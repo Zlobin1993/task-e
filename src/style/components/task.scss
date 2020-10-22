@@ -1,0 +1,182 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+	padding-right: 75px;
+	
+	@include tablet {
+		padding-right: 0;
+	}
+
+	@include mobile {
+		box-shadow: $block-shadow;
+	}
+
+    &__control-list {
+		align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+		align-items: center;
+        min-width: 60px;
+        width: 60px;
+        padding: 15px;
+        background-color: $white;
+        @include block-border-radius;
+        box-shadow: $block-shadow;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+		transition: opacity $transition-duration;
+
+		@include mobile {
+			align-self: stretch;
+			min-width: 0;
+			width: auto;
+			padding-right: 0;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			visibility: visible;
+			opacity: 1;
+			box-shadow: none;
+		}
+    }
+
+    &--is-changing > &__control-list,
+    &:hover > &__control-list {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__control {
+        padding: 5px;
+		transition: color $transition-duration;
+
+		@include mobile {
+			padding: 0;
+		}
+		
+		&:disabled {
+			color: $gray;
+		}
+
+        &--green {
+            color: $main;
+
+            &:not(:disabled):hover {
+                color: $main-dark;
+			}
+        }
+
+        &--red {
+            color: $red;
+
+            &:not(:disabled):hover {
+                color: $red-dark
+			}
+        }
+
+        & + & {
+            margin-top: 15px;
+        }
+    }
+
+    &__container {
+        flex-grow: 1;
+        display: flex;
+        margin-left: 15px;
+        background-color: $white;
+        @include block-border-radius;
+        box-shadow: $block-shadow;
+		overflow: hidden;
+
+		@include mobile {
+			margin-left: 0;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			box-shadow: none;
+		}
+    }
+
+    &__content {
+        flex-grow: 1;
+        padding: 15px;
+    }
+
+    &__text,
+    &__textarea {
+        font-size: 1rem;
+        line-height: 1.4;
+        font-weight: 300;
+		color: $black;
+		
+		@include tablet {
+			font-size: 0.9rem;
+		}
+    }
+
+    &__textarea {
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        margin: 0;
+    }
+
+    &__indicator {
+        display: flex;
+        justify-content: center;
+		align-items: center;
+		min-width: 40px;
+		width: 10%;
+		max-width: 125px;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        box-shadow: none;
+        background: none;
+        background-color: $gray;
+        transition: background-color $transition-duration;
+		cursor: pointer;
+
+        &:disabled {
+            cursor: default;
+        }
+
+        &:not(:disabled):hover {
+            background-color: $gray-light;
+        }
+
+        & > i {
+            font-size: 2rem;
+			color: $white;
+
+			@include tablet {
+				font-size: 1.5rem;
+			}
+			
+			@include mobile {
+				font-size: 0.9rem;
+			}
+        }
+
+        &--success {
+            background-color: $main-dark;
+
+            &:not(:disabled):hover {
+                background-color: $main;
+            }
+        }
+
+        &--fail {
+            background-color: $red;
+            cursor: default;
+
+            &:not(:disabled):hover {
+                background-color: $red;
+            }
+
+            & > i {
+                opacity: 0;
+            }
+        }
+    }
+}

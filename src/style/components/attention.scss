@@ -1,0 +1,16 @@
+.attention {
+    position: relative;
+
+    &__background {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: -25%;
+        left: -25%;
+        display: block;
+        height: 150%;
+        width: 150%;
+        transform: skewX(-20deg);
+        background-color: $white;
+    }
+}

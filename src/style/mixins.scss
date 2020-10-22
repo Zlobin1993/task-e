@@ -1,0 +1,26 @@
+@mixin block-border-radius {
+	border-radius: 11px;
+
+	@include tablet {
+		border-radius: 7px;
+	}
+}
+
+// Resolutions
+@mixin desktop {
+	@media (max-width: $desktop-resolution - 1) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: $tablet-resolution - 1) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: $mobile-resolution - 1) {
+		@content;
+	}
+}
